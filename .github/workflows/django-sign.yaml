@@ -50,3 +50,6 @@ jobs:
         env:
           COSIGN_EXPERIMENTAL: "true"
         run: cosign sign ghcr.io/${{ github.repository }}@${{ steps.push-step.outputs.digest }}
+        
+      - name: Docker Push ttl.sh
+        run: docker push ttl.sh/cosigned_django:1h
